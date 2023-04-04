@@ -292,8 +292,8 @@ df_final.head()
                                        # Model oluşturunuz.
                                     ###########################
 
-X = df.drop(["Churn", "customerID"], axis=1)
-y = df["Churn"]
+X = df_final.drop(["Churn", "customerID"], axis=1)
+y = df_final["Churn"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=17)
 from sklearn.ensemble import RandomForestClassifier
 rf_model = RandomForestClassifier (random_state=46).fit(X_train, y_train)
