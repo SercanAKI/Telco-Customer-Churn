@@ -278,15 +278,16 @@ def one_hot_encoder(dataframe,categorical_cols,drop_first=True):
     dataframe = pd.get_dummies(dataframe, columns=categorical_cols, drop_first=drop_first)
     return dataframe
 
-one_hot_encoder(df,ohe_cols)
+df_final = one_hot_encoder(df,ohe_cols)
+df_final.head()
 
                        ###########################################################
                           # Numerik değişkenler için standartlaştırma yapınız.
                        ###########################################################
 
 scaler = StandardScaler()
-df[num_cols] = scaler.fit_transform(df[num_cols])
-df.head()
+df_final[num_cols] = scaler.fit_transform(df_final[num_cols])
+df_final.head()
                                     ###########################
                                        # Model oluşturunuz.
                                     ###########################
