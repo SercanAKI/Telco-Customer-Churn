@@ -282,15 +282,15 @@ df_final = one_hot_encoder(df,ohe_cols)
 df_final.head()
 
                        ###########################################################
-                          # Numerik değişkenler için standartlaştırma yapınız.
+                          # Numerik değişkenler için standartlaştırma yapalım.
                        ###########################################################
 
 scaler = StandardScaler()
 df_final[num_cols] = scaler.fit_transform(df_final[num_cols])
 df_final.head()
-                                    ###########################
-                                       # Model oluşturunuz.
-                                    ###########################
+                                    ##################################
+                                      # Son olarak Model oluşturalım.
+                                    ##################################
 
 X = df_final.drop(["Churn", "customerID"], axis=1)
 y = df_final["Churn"]
@@ -314,4 +314,4 @@ def plot_importance(model, features, num=len(X), save=False):
 
 plot_importance(rf_model, X_train)
 
-#NOT: Diğer modelleme yöntemleriyle birlikte çok yakında yeniden analizler de gelecek:)
+#NOT: Diğer modelleme yöntemleriyle birlikte çok yakında yeniden analizler gelecek:)
